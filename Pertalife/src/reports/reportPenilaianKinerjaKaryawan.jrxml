@@ -1,0 +1,386 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="259b009d-b7ab-44e8-9757-d4dd0451dc9c">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="40"/>
+	<property name="ireport.y" value="186"/>
+	<queryString>
+		<![CDATA[SELECT
+     penilaian_kinerja_karyawan.`kode_penilaian` AS penilaian_kinerja_karyawan_kode_penilaian,
+     penilaian_kinerja_karyawan.`nip_karyawan` AS penilaian_kinerja_karyawan_nip_karyawan,
+     penilaian_kinerja_karyawan.`n1` AS penilaian_kinerja_karyawan_n1,
+     penilaian_kinerja_karyawan.`n2` AS penilaian_kinerja_karyawan_n2,
+     penilaian_kinerja_karyawan.`n3` AS penilaian_kinerja_karyawan_n3,
+     penilaian_kinerja_karyawan.`xn1` AS penilaian_kinerja_karyawan_xn1,
+     penilaian_kinerja_karyawan.`xn2` AS penilaian_kinerja_karyawan_xn2,
+     penilaian_kinerja_karyawan.`xn3` AS penilaian_kinerja_karyawan_xn3,
+     penilaian_kinerja_karyawan.`xntotal` AS penilaian_kinerja_karyawan_xntotal,
+     karyawan.`nip` AS karyawan_nip,
+     karyawan.`nama` AS karyawan_nama,
+     karyawan.`jabatan` AS karyawan_jabatan
+FROM
+     `karyawan` karyawan INNER JOIN `penilaian_kinerja_karyawan` penilaian_kinerja_karyawan ON karyawan.`nip` = penilaian_kinerja_karyawan.`nip_karyawan`
+ORDER BY penilaian_kinerja_karyawan_xntotal DESC]]>
+	</queryString>
+	<field name="penilaian_kinerja_karyawan_kode_penilaian" class="java.lang.String"/>
+	<field name="penilaian_kinerja_karyawan_nip_karyawan" class="java.lang.String"/>
+	<field name="penilaian_kinerja_karyawan_n1" class="java.lang.Integer"/>
+	<field name="penilaian_kinerja_karyawan_n2" class="java.lang.Integer"/>
+	<field name="penilaian_kinerja_karyawan_n3" class="java.lang.Integer"/>
+	<field name="penilaian_kinerja_karyawan_xn1" class="java.lang.Double"/>
+	<field name="penilaian_kinerja_karyawan_xn2" class="java.lang.Double"/>
+	<field name="penilaian_kinerja_karyawan_xn3" class="java.lang.Double"/>
+	<field name="penilaian_kinerja_karyawan_xntotal" class="java.lang.Double"/>
+	<field name="karyawan_nip" class="java.lang.String"/>
+	<field name="karyawan_nama" class="java.lang.String"/>
+	<field name="karyawan_jabatan" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="120" splitType="Stretch">
+			<line>
+				<reportElement x="0" y="106" width="555" height="1" uuid="f989f527-1010-43b8-9d77-6c6f4a52b6c2"/>
+				<graphicElement>
+					<pen lineWidth="2.0"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement x="125" y="48" width="425" height="35" uuid="94f4490a-eac7-40cc-9c18-6c35b45ac562"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="14"/>
+				</textElement>
+				<text><![CDATA[Jl. Alamanda No.111, RT.002/RW.7, Tugu, Kec. Cimanggis, Kota Depok, Jawa Barat 16451, Telp : 082114648035]]></text>
+			</staticText>
+			<image>
+				<reportElement x="5" y="0" width="120" height="105" uuid="5f194252-3b72-4572-82db-d3706545e698"/>
+				<imageExpression><![CDATA["C:\\Users\\Kipol\\Documents\\NetBeansProjects\\Toko4Saudara\\src\\images\\icon-logo.png"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="125" y="18" width="425" height="30" uuid="78dabb2e-0307-4c1d-98e2-ce0aac10ff0c"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="24" isBold="true"/>
+				</textElement>
+				<text><![CDATA[TOKO 4 SAUDARA]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="50" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="555" height="50" uuid="12c31b48-a747-4986-bdd6-7d4da453a566"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[LAPORAN DATA PENILAIAN KINERJA KARYAWAN]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="25" splitType="Stretch">
+			<rectangle>
+				<reportElement x="0" y="0" width="555" height="25" backcolor="#000000" uuid="1ea0b39c-d242-41fb-b136-02333f5bbdfd"/>
+				<graphicElement>
+					<pen lineWidth="1.0"/>
+				</graphicElement>
+			</rectangle>
+			<rectangle>
+				<reportElement x="0" y="0" width="100" height="25" forecolor="#000000" backcolor="#191919" uuid="14eb8908-76e4-4641-aa1c-626d8485b2ea"/>
+				<graphicElement>
+					<pen lineWidth="1.0" lineColor="#000000"/>
+				</graphicElement>
+			</rectangle>
+			<rectangle>
+				<reportElement x="60" y="0" width="120" height="25" forecolor="#000000" backcolor="#191919" uuid="b55f11fa-5de1-422a-ab4e-9cec37a1ce51"/>
+				<graphicElement>
+					<pen lineWidth="1.0"/>
+				</graphicElement>
+			</rectangle>
+			<rectangle>
+				<reportElement x="180" y="0" width="80" height="25" forecolor="#000000" backcolor="#191919" uuid="a964178e-6460-46a7-bfda-0547a716dd97"/>
+				<graphicElement>
+					<pen lineWidth="1.0"/>
+				</graphicElement>
+			</rectangle>
+			<rectangle>
+				<reportElement x="260" y="0" width="38" height="25" forecolor="#000000" backcolor="#191919" uuid="2a16e621-f3a2-4309-8ce6-9f8a6c20684c"/>
+				<graphicElement>
+					<pen lineWidth="1.0"/>
+				</graphicElement>
+			</rectangle>
+			<rectangle>
+				<reportElement x="298" y="0" width="38" height="25" forecolor="#000000" backcolor="#191919" uuid="aa8ca7bb-3227-44d0-9d8a-d0e0b1c6aece"/>
+				<graphicElement>
+					<pen lineWidth="1.0"/>
+				</graphicElement>
+			</rectangle>
+			<rectangle>
+				<reportElement x="336" y="0" width="38" height="25" forecolor="#000000" backcolor="#191919" uuid="a4d02f41-d490-4042-ad27-c0e01ac04eaa"/>
+				<graphicElement>
+					<pen lineWidth="1.0"/>
+				</graphicElement>
+			</rectangle>
+			<rectangle>
+				<reportElement x="374" y="0" width="38" height="25" forecolor="#000000" backcolor="#191919" uuid="d1a7b1f1-d693-435e-abbd-1c0fd031799c"/>
+				<graphicElement>
+					<pen lineWidth="1.0"/>
+				</graphicElement>
+			</rectangle>
+			<rectangle>
+				<reportElement x="412" y="0" width="38" height="25" forecolor="#000000" backcolor="#191919" uuid="9b298b69-dade-4825-8e4f-08ce43fc29ee"/>
+				<graphicElement>
+					<pen lineWidth="1.0"/>
+				</graphicElement>
+			</rectangle>
+			<rectangle>
+				<reportElement x="450" y="0" width="38" height="25" forecolor="#000000" backcolor="#191919" uuid="7aed38bb-8ba2-4351-8c2c-3aef7b395865"/>
+				<graphicElement>
+					<pen lineWidth="1.0"/>
+				</graphicElement>
+			</rectangle>
+			<rectangle>
+				<reportElement x="488" y="0" width="67" height="25" forecolor="#000000" backcolor="#191919" uuid="09f1c0c3-97a6-479b-9267-0d7054d63d97"/>
+				<graphicElement>
+					<pen lineWidth="1.0"/>
+				</graphicElement>
+			</rectangle>
+			<staticText>
+				<reportElement x="0" y="0" width="60" height="25" forecolor="#FFFFFF" uuid="d9bf451b-2445-4c1f-8c1d-2e56c6dcff91"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="12" isBold="true"/>
+					<paragraph leftIndent="2" rightIndent="2"/>
+				</textElement>
+				<text><![CDATA[NIP]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="60" y="0" width="120" height="25" forecolor="#FFFFFF" uuid="ec452869-e05f-4afe-853d-72954afde1f8"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="12" isBold="true"/>
+					<paragraph leftIndent="2" rightIndent="2"/>
+				</textElement>
+				<text><![CDATA[NAMA KARYAWAN]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="180" y="0" width="80" height="25" forecolor="#FFFFFF" uuid="5fd12b06-930f-4c6c-9b74-7c15fa70c781"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="12" isBold="true"/>
+					<paragraph leftIndent="2" rightIndent="2"/>
+				</textElement>
+				<text><![CDATA[JABATAN]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="260" y="0" width="38" height="25" forecolor="#FFFFFF" uuid="3f684219-6dd0-4151-9945-8af98c719ff8"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="12" isBold="true"/>
+					<paragraph leftIndent="2" rightIndent="2"/>
+				</textElement>
+				<text><![CDATA[N1]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="298" y="0" width="38" height="25" forecolor="#FFFFFF" uuid="bd04fcd0-f9b2-4a16-963d-fa8d103055a4"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="12" isBold="true"/>
+					<paragraph leftIndent="2" rightIndent="2"/>
+				</textElement>
+				<text><![CDATA[N2]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="336" y="0" width="38" height="25" forecolor="#FFFFFF" uuid="02b5c13d-17b5-402b-9fc4-b9038ce02acd"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="12" isBold="true"/>
+					<paragraph leftIndent="2" rightIndent="2"/>
+				</textElement>
+				<text><![CDATA[N3]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="374" y="0" width="38" height="25" forecolor="#FFFFFF" uuid="4ff7e3cd-b211-4d74-9e49-1b39597e8c30"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="12" isBold="true"/>
+					<paragraph leftIndent="2" rightIndent="2"/>
+				</textElement>
+				<text><![CDATA[XN1]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="412" y="0" width="38" height="25" forecolor="#FFFFFF" uuid="3142e619-705d-441b-8a0f-372e5ada8e4a"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="12" isBold="true"/>
+					<paragraph leftIndent="2" rightIndent="2"/>
+				</textElement>
+				<text><![CDATA[XN2]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="450" y="0" width="38" height="25" forecolor="#FFFFFF" uuid="8499ebdd-76b8-4226-8235-9392c8dba559"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="12" isBold="true"/>
+					<paragraph leftIndent="2" rightIndent="2"/>
+				</textElement>
+				<text><![CDATA[XN3]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="488" y="0" width="67" height="25" forecolor="#FFFFFF" uuid="b177f308-2af5-49b2-98d1-f8458731681a"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="12" isBold="true"/>
+					<paragraph leftIndent="2" rightIndent="2"/>
+				</textElement>
+				<text><![CDATA[XNTOTAL]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="25" splitType="Stretch">
+			<frame>
+				<reportElement x="0" y="0" width="555" height="25" uuid="10978558-551d-499f-a06d-bd460880b9e5"/>
+				<rectangle>
+					<reportElement stretchType="RelativeToBandHeight" x="0" y="0" width="555" height="25" uuid="5a4efd18-e6ae-4102-ab7c-b7279d09b87d"/>
+				</rectangle>
+				<rectangle>
+					<reportElement stretchType="RelativeToBandHeight" x="0" y="0" width="60" height="25" uuid="4fe9ef0f-fa7c-4ce6-88ba-6dbeb5bfa45d"/>
+				</rectangle>
+				<rectangle>
+					<reportElement stretchType="RelativeToBandHeight" x="60" y="0" width="120" height="25" uuid="a25c9b6a-6487-4289-a6db-2e71ca4a30f3"/>
+				</rectangle>
+				<rectangle>
+					<reportElement stretchType="RelativeToBandHeight" x="180" y="0" width="80" height="25" uuid="dc1b8c12-3822-4a3e-bbed-e25ab33e926b"/>
+				</rectangle>
+				<rectangle>
+					<reportElement stretchType="RelativeToBandHeight" x="260" y="0" width="38" height="25" uuid="af0da331-297d-4bdb-b1c4-2f36986903e8"/>
+				</rectangle>
+				<rectangle>
+					<reportElement stretchType="RelativeToBandHeight" x="298" y="0" width="38" height="25" uuid="1963828c-24c0-4471-9210-c2370b8feee1"/>
+				</rectangle>
+				<rectangle>
+					<reportElement stretchType="RelativeToBandHeight" x="336" y="0" width="38" height="25" uuid="4c9530e6-3031-4309-a3e3-f147399bb356"/>
+				</rectangle>
+				<rectangle>
+					<reportElement stretchType="RelativeToBandHeight" x="374" y="0" width="38" height="25" uuid="c90cd0a5-8476-48d4-bd6f-45a8b0d7d193"/>
+				</rectangle>
+				<rectangle>
+					<reportElement stretchType="RelativeToBandHeight" x="412" y="0" width="38" height="25" uuid="c5d08672-c0ea-4195-ac8d-f72f99e5c8b0"/>
+				</rectangle>
+				<rectangle>
+					<reportElement stretchType="RelativeToBandHeight" x="450" y="0" width="38" height="25" uuid="050ed1bc-e93c-44c3-a963-d39d08a29e11"/>
+				</rectangle>
+				<rectangle>
+					<reportElement stretchType="RelativeToBandHeight" x="488" y="0" width="67" height="25" uuid="b94121f4-5a49-4fbe-8b11-9717975c11c5"/>
+				</rectangle>
+				<textField isStretchWithOverflow="true">
+					<reportElement positionType="Float" stretchType="RelativeToBandHeight" x="0" y="0" width="60" height="25" uuid="f7ffb422-a65d-4558-83df-50ba86f547b4"/>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font fontName="Times New Roman" size="12"/>
+						<paragraph leftIndent="5" rightIndent="5"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{penilaian_kinerja_karyawan_nip_karyawan}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement positionType="Float" stretchType="RelativeToBandHeight" x="60" y="0" width="120" height="25" uuid="9257f8f9-9871-4ba4-a504-ce223cec7807"/>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font fontName="Times New Roman" size="12"/>
+						<paragraph leftIndent="5" rightIndent="5"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{karyawan_nama}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement positionType="Float" stretchType="RelativeToBandHeight" x="180" y="0" width="80" height="25" uuid="4194a3ba-4df1-4c28-93f5-cccd0b07cda5"/>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font fontName="Times New Roman" size="12"/>
+						<paragraph leftIndent="5" rightIndent="5"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{karyawan_jabatan}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" pattern="###0.00">
+					<reportElement positionType="Float" stretchType="RelativeToBandHeight" x="260" y="0" width="38" height="25" uuid="cafef60c-4cbf-4968-923f-5ddcd6ff9dd7"/>
+					<textElement textAlignment="Justified" verticalAlignment="Middle">
+						<font fontName="Times New Roman" size="12"/>
+						<paragraph leftIndent="5" rightIndent="5"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{penilaian_kinerja_karyawan_n1}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement positionType="Float" stretchType="RelativeToBandHeight" x="298" y="0" width="38" height="25" uuid="8a927894-411a-4c8b-8f14-085bc52ce8fb"/>
+					<textElement textAlignment="Justified" verticalAlignment="Middle">
+						<font fontName="Times New Roman" size="12"/>
+						<paragraph leftIndent="5" rightIndent="5"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{penilaian_kinerja_karyawan_n2}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement positionType="Float" stretchType="RelativeToBandHeight" x="336" y="0" width="38" height="25" uuid="87f41e24-b1e3-43e7-8ca6-0450cc47b03f"/>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font fontName="Times New Roman" size="12"/>
+						<paragraph leftIndent="5" rightIndent="5"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{penilaian_kinerja_karyawan_n3}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement positionType="Float" stretchType="RelativeToBandHeight" x="374" y="0" width="38" height="25" uuid="f691b01b-8c78-4415-a11b-b74df9312339"/>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font fontName="Times New Roman" size="12"/>
+						<paragraph leftIndent="5" rightIndent="5"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{penilaian_kinerja_karyawan_xn1}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement positionType="Float" stretchType="RelativeToBandHeight" x="412" y="0" width="38" height="25" uuid="ae9a6053-8a48-41b4-b900-0d0817f796e9"/>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font fontName="Times New Roman" size="12"/>
+						<paragraph leftIndent="5" rightIndent="5"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{penilaian_kinerja_karyawan_xn2}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement positionType="Float" stretchType="RelativeToBandHeight" x="450" y="0" width="38" height="25" uuid="b57d8428-fe55-4da2-8fa9-4853e844024b"/>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font fontName="Times New Roman" size="12"/>
+						<paragraph leftIndent="5" rightIndent="5"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{penilaian_kinerja_karyawan_xn3}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement positionType="Float" stretchType="RelativeToBandHeight" x="488" y="0" width="67" height="25" uuid="b20bb548-192c-4433-a379-3b0f930801d9"/>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font fontName="Times New Roman" size="12"/>
+						<paragraph leftIndent="5" rightIndent="5"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{penilaian_kinerja_karyawan_xntotal}]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="130" splitType="Stretch">
+			<staticText>
+				<reportElement x="379" y="112" width="176" height="18" uuid="ca25650b-4f25-437e-aa05-d4a81b9f59d3"/>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<text><![CDATA[Pemilik Toko]]></text>
+			</staticText>
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement x="420" y="0" width="135" height="20" uuid="0b2e75ed-4d7f-42ec-a299-bcccd15ba363"/>
+				<textElement>
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="379" y="0" width="41" height="20" uuid="30e7c368-0852-4364-a94d-82ab6ac18163"/>
+				<textElement>
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<text><![CDATA[Jakarta,]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="379" y="94" width="176" height="18" uuid="8b6db56a-9977-41d0-98d4-d2e243e3a563"/>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman" size="12" isUnderline="true"/>
+				</textElement>
+				<text><![CDATA[Saiful]]></text>
+			</staticText>
+		</band>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>
